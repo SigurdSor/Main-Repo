@@ -31,7 +31,7 @@ class Vector3D:
     def dot(self, other):
         if isinstance(other,self.__class__):
             return self.x*other.x + self.y*other.y + self.z*other.z
-        elif isinstance(other, int):
+        elif isinstance(other, (int, float)):
             return self.x*other + self.y*other + self.z*other
 
     def __mul__(self, other):
@@ -52,6 +52,13 @@ class Vector3D:
     def perpendicular(self, other):
         return np.isclose(self*other, 0)
 
+    def __eq__(self, other):
+        """ Se om to vektorer er like"""
+        same_x = np.isclose(self.x, other.x)
+        same_y = np.isclose(self.y, other.y)
+        same_z = np.isclose(self.z, other.z)
+
+
     @property
     def length(self):
         return np.sqrt(self*self)
@@ -62,7 +69,7 @@ class Vector3D:
         sef.x *= scale
         sef.y *= scale
         sef.z *= scale
-        return np.sqrt(self*self)
+        #return np.sqrt(self*self)
 
     @property
     def unit_vector(self):
