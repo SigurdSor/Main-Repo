@@ -23,6 +23,7 @@ def bubble_sort(liste):
                 sorted[j+1], sorted[j] = sorted[j], sorted[j+1]
     return sorted
 
+
 def test_bubble_sort():
     test1 = [1, 5, 2, 13, 8]
     test1_copy = test1.copy()

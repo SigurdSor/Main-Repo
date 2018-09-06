@@ -17,6 +17,7 @@ def median(data):
     data.sort()
     return data[len(data)//2]
 
+
 def test_median():
     test1 = [1]
     test2 = [-89, 56]
@@ -27,10 +28,12 @@ def test_median():
     assert test2 == test3
     assert median(test4) == 0
 
+
 @ns.raises(TypeError)
 def testType_median():
     test1 = [1, "pølse", median]
     median(test1)
+
 
 @ns.raises(IndexError)
 def testIndex_median():
