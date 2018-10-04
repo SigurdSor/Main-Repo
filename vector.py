@@ -66,9 +66,9 @@ class Vector3D:
     @length.setter
     def length(self, new_length):
         scale = new_length/self.new_length
-        sef.x *= scale
-        sef.y *= scale
-        sef.z *= scale
+        self.x *= scale
+        self.y *= scale
+        self.z *= scale
         #return np.sqrt(self*self)
 
     @property
